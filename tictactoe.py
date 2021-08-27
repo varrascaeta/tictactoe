@@ -34,7 +34,16 @@ class Board():
     
     
     def __init__(self, wid = 640, hgt = 640):
-       pass
+        self.wid, self.hgt = wid, hgt
+        self.cellsize = int(wid/3)-self.linesize, int(hgt/3)-self.linesize
+        centercol = wid/3 + self.linesize 
+        centerrow = hgt/3 + self.linesize
+        bottomrow = 2 * hgt/3 + self.linesize
+        bottomcol = 2 * wid/3 + self.linesize
+        self.board_coords = [[(self.linesize,self.linesize), (centercol, self.linesize),(bottomcol, self.linesize)],
+                          [(self.linesize,centerrow),(centercol,centerrow),(bottomcol,centerrow)],
+                          [(self.linesize,bottomrow),(centercol,bottomrow),(bottomcol, bottomcol)]]
+
     def board_lines(self):    
         pass
 
