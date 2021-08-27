@@ -45,7 +45,13 @@ class Board():
                           [(self.linesize,bottomrow),(centercol,bottomrow),(bottomcol, bottomcol)]]
 
     def board_lines(self):    
-        pass
+        pg.Surface.fill(self.window, (0,0,0))
+        pg.draw.lines(self.window, pg.Color("grey"), True, [(0,0), (self.wid,0), (self.wid,self.hgt), (0,self.hgt)], self.linesize)
+        pg.draw.line(self.window, pg.Color("grey"), (self.wid/3,0),(self.wid/3,self.hgt), self.linesize)
+        pg.draw.line(self.window, pg.Color("grey"), (2*self.wid/3,0),(2*self.wid/3,self.hgt), self.linesize)
+        pg.draw.line(self.window, pg.Color("grey"), (0,self.hgt/3),(self.wid,self.hgt/3), self.linesize)
+        pg.draw.line(self.window, pg.Color("grey"), (0,2*self.hgt/3),(self.wid,2*self.hgt/3), self.linesize)
+        pg.display.flip()
 
     def create_cells(self):
         pass
