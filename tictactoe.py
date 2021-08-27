@@ -54,7 +54,17 @@ class Board():
         pg.display.flip()
 
     def create_cells(self):
-        pass
+        rows, cells = [], []
+        for i in range(len(self.board_coords)):
+            for j in range(len(self.board_coords[i])):
+                x, y = self.board_coords[i][j]
+                w, h = self.cellsize
+                rect = pg.Rect(x, y, w, h)
+                fig = pg.draw.rect(self.window, (0,0,0), rect)
+                rows.append(fig)
+            cells.append(rows)
+        
+        return cells
 
 
 class Game():
